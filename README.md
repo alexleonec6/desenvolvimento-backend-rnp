@@ -1,108 +1,105 @@
-# Desenvolvimento Backend (RNP / ESR) - Estudos e Mini-Projeto Prático
+# Estudos - Curso de Desenvolvimento Backend (RNP / ESR)
 
-Repositório com as minhas anotações, comprovante de conclusão e o mini-projeto prático em **Java e Spring Boot** que fiz para aplicar tudo o que aprendi no curso de **Desenvolvimento Backend** da **Escola Superior de Redes (ESR / RNP)**, ministrado pelo Prof. Kleber de Aguiar.
-
----
-
-## Comprovante de Conclusão do Curso
-
-Concluí **100% das etapas do curso** no Moodle oficial da RNP, com nota máxima no pacote interativo SCORM e a pesquisa de satisfação enviada.
-
-![Comprovante de Conclusao 100% no Moodle](comprovante-conclusao-rnp.png)
-
-- **Status no Moodle:** 100% Completo (Aprovado)
-- **Portal de Certificados da ESR:** [https://esr.rnp.br/minha-conta/meus-certificados/](https://esr.rnp.br/minha-conta/meus-certificados/)  
-  *(De acordo com o Moodle da RNP, o certificado oficial sincroniza e é emitido no portal da ESR em até 7 dias após a aprovação das atividades).*
+Anotacoes, comprovante de conclusao e um mini-projeto em Java com Spring Boot que fiz para praticar o que aprendi no curso de Desenvolvimento Backend da RNP (Escola Superior de Redes), com o professor Kleber de Aguiar.
 
 ---
 
-## O que aprendi no curso (resumo simples em 4 módulos)
+## Comprovante de Conclusao e Certificado
 
-### 📘 Módulo 1: Fundamentos da Web e Java Enterprise
-- **Protocolo HTTP:** Entendi como funciona a conversa entre cliente e servidor (as requisições que enviamos e as respostas que recebemos com cabeçalhos e corpo).
-- **Verbos HTTP:** Quando usar cada um na prática:
-  - `GET`: buscar informações sem alterar nada no servidor.
-  - `POST`: cadastrar/criar um recurso novo.
-  - `PUT`: atualizar os dados de algo que já existe.
-  - `DELETE`: remover um registro.
-- **Códigos de Status (HTTP Status Codes):** A importância de devolver os códigos certos (ex: `200 OK`, `201 Created` quando cadastrou, `404 Not Found` quando não achou, `400 Bad Request` quando o dado veio errado).
-- **Arquitetura MVC (Model-View-Controller):** Separação de responsabilidades para não misturar regra de negócio com acesso ao banco e resposta da tela.
+Terminei todas as etapas do curso no Moodle da RNP, com 100% de progresso, nota maxima na atividade SCORM e a pesquisa de satisfacao respondida.
 
-### 🚀 Módulo 2: Construindo sua primeira API REST com Spring Boot
-- **O que é o Spring Boot:** Um framework que cuida de toda a configuração pesada do Java pra gente focar só na lógica da aplicação.
-- **Anotações principais:**
-  - `@SpringBootApplication`: ponto de partida da aplicação.
-  - `@RestController`: avisa ao Spring que aquela classe vai receber requisições HTTP e devolver dados em formato JSON.
-  - `@RequestMapping("/api/...")`: rota base dos endpoints.
-  - `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: mapeia qual método Java roda em cada verbo HTTP.
-  - `@RequestBody`: lê o JSON que o usuário mandou no corpo da requisição.
-  - `@PathVariable`: pega o ID que vem na própria URL (ex: `/api/produtos/5`).
-- **DTOs (Data Transfer Object):** Aprendi que não devemos expor a entidade do banco de dados diretamente na API. Usamos classes DTO para controlar exatamente o que entra e o que sai.
+![Comprovante de Conclusao](comprovante-conclusao-rnp.png)
 
-### 💾 Módulo 3: Persistência de Dados com Spring Data JPA
-- **JPA e Hibernate:** Como transformar classes normais do Java em tabelas no banco de dados sem precisar ficar escrevendo comandos SQL na mão.
-- **Anotações de Banco:**
-  - `@Entity`: marca a classe como uma tabela.
-  - `@Id` e `@GeneratedValue(strategy = GenerationType.IDENTITY)`: cria a chave primária auto-incrementada (1, 2, 3...).
-  - `@Column`: customiza as colunas (tamanho máximo, se aceita nulo ou não).
-- **Spring Data JPA (`JpaRepository`):** Apenas criando uma interface que estende `JpaRepository<Produto, Long>`, o Spring já cria automaticamente os métodos `save()`, `findAll()`, `findById()` e `deleteById()`.
-- **Derived Queries:** Criar consultas no banco só pelo nome do método no Java (ex: `findByStatus(StatusProduto status)`).
-
-### 🧪 Módulo 4: Testes Automatizados em APIs Spring Boot
-- **Por que testar:** Para ter certeza de que uma alteração nova não quebrou nenhuma funcionalidade antiga.
-- **Testes Unitários com JUnit 5 e Mockito:** Testar a camada de serviço (`@Service`) de forma isolada e ultra rápida.
-- **Mocks (`@Mock` e `@InjectMocks`):** Em vez de ligar o banco de dados de verdade no teste unitário, a gente simula o repositório com o Mockito, dizendo o que ele deve retornar e testando se as regras de validação funcionam.
+- Status no Moodle: 100% concluido
+- Link para pegar o certificado: https://esr.rnp.br/minha-conta/meus-certificados/
+(O sistema da RNP avisa que o certificado oficial fica disponivel no portal da ESR em ate 7 dias uteis apos a aprovacao).
 
 ---
 
-## Estrutura do Mini-Projeto no Repositório
+## O que aprendi no curso
 
-Montei uma API de gerenciamento de produtos e estoque aplicando essa arquitetura em camadas:
+### Modulo 1: Como funciona a Web e Java
+- Protocolo HTTP: como o navegador conversa com o servidor mandando pedidos (requests) e recebendo respostas (responses).
+- Verbos HTTP:
+  - GET: pega dados sem mudar nada no banco.
+  - POST: salva um registro novo.
+  - PUT: altera um registro que ja existe.
+  - DELETE: apaga um registro.
+- Codigos de resposta (Status Codes): 200 quando deu certo, 201 quando criou algo novo, 404 quando nao achou, e 400 quando o dado enviado esta errado.
+- MVC: separar o codigo em partes (dados, regras e tela/rotas) para nao ficar uma bagunca.
+
+### Modulo 2: Criando a API com Spring Boot
+- Spring Boot: facilita criar aplicacoes Java sem precisar configurar tudo do zero.
+- Anotacoes que usei:
+  - @SpringBootApplication: inicia o projeto.
+  - @RestController: diz que a classe responde chamadas web e devolve JSON.
+  - @RequestMapping: coloca o prefixo da rota (ex: /api/produtos).
+  - @GetMapping, @PostMapping, @PutMapping, @DeleteMapping: liga cada funcao ao seu verbo HTTP correspondente.
+  - @RequestBody: pega os dados que vieram no corpo da requisicao.
+  - @PathVariable: pega o ID que vem direto na URL (ex: /api/produtos/2).
+- DTO (Data Transfer Object): classe simples usada para receber e devolver so os campos necessarios, sem expor a tabela do banco direto para quem chama a API.
+
+### Modulo 3: Salvando dados no banco com Spring Data JPA
+- JPA e Hibernate: mapeia as classes do Java direto para as tabelas do banco de dados, sem precisar ficar escrevendo comandos SQL na mao.
+- Anotacoes de banco:
+  - @Entity: avisa que a classe e uma tabela.
+  - @Id e @GeneratedValue: cria o ID que aumenta sozinho (1, 2, 3...).
+- JpaRepository: apenas criando a interface, o Spring ja entrega pronto os metodos para salvar, buscar por ID, listar todos e deletar.
+- H2 Database: banco de dados que roda direto na memoria do computador, otimo para estudar e testar sem precisar instalar MySQL ou PostgreSQL.
+
+### Modulo 4: Testes automatizados
+- Testes unitarios: testam pequenos pedacos de codigo (como as regras de negocio de uma classe de servico) de forma rapida e isolada.
+- JUnit 5 e Mockito: ferramentas usadas para criar os testes.
+- Mocks (@Mock e @InjectMocks): simulam o banco de dados para testar as regras (por exemplo: impedir salvar produto com preco zero ou estoque negativo) sem precisar ligar banco nenhum.
+
+---
+
+## Estrutura do projeto
 
 ```
 src/
 ├── main/
 │   ├── java/com/alexandre/backend/
-│   │   ├── BackendApplication.java       # Ponto de entrada do Spring Boot
+│   │   ├── BackendApplication.java       # Arquivo principal do Spring Boot
 │   │   ├── controller/
-│   │   │   └── ProdutoController.java    # Endpoints REST (GET, POST, PUT, DELETE)
+│   │   │   └── ProdutoController.java    # Rotas da API (GET, POST, PUT, DELETE)
 │   │   ├── dto/
-│   │   │   └── ProdutoDTO.java           # Objeto de transferencia de dados
+│   │   │   └── ProdutoDTO.java           # Dados que entram e saem da API
 │   │   ├── model/
-│   │   │   ├── Produto.java              # Entidade JPA mapeada para a tabela 'produtos'
-│   │   │   └── StatusProduto.java        # Enum (ATIVO, EM_FALTA, DESCONTINUADO)
+│   │   │   ├── Produto.java              # Tabela de produtos mapeada pelo JPA
+│   │   │   └── StatusProduto.java        # Status do produto (ATIVO, EM_FALTA, etc)
 │   │   ├── repository/
-│   │   │   └── ProdutoRepository.java    # Interface Spring Data JPA
+│   │   │   └── ProdutoRepository.java    # Interface de comunicacao com o banco
 │   │   └── service/
-│   │       └── ProdutoService.java       # Regras de negocio e validacoes
+│   │       └── ProdutoService.java       # Validacoes e regras de negocio
 │   └── resources/
-│       └── application.properties        # Configuracao com banco em memoria H2
+│       └── application.properties        # Configuracao da porta e banco H2
 └── test/
     └── java/com/alexandre/backend/service/
-        └── ProdutoServiceTest.java       # Testes unitarios com JUnit 5 e Mockito
+        └── ProdutoServiceTest.java       # Testes com JUnit 5 e Mockito
 ```
 
 ---
 
-## Como rodar o projeto
+## Como rodar
 
-### Opção 1: Rodando com o Maven (Spring Boot Completo)
-Se você tem o Maven ou usa uma IDE (IntelliJ, VS Code, Eclipse):
+### Opcao 1: Usando o Maven (Spring Boot)
+Se voce usa IntelliJ, VS Code ou tem o Maven no terminal:
 ```bash
-# Rodar os testes automatizados
+# Rodar os testes
 mvn test
 
-# Subir a aplicacao
+# Subir a API
 mvn spring-boot:run
 ```
-A API vai subir em `http://localhost:8080/api/produtos`.  
-O console do banco H2 fica acessível em `http://localhost:8080/h2-console`.
+A API fica disponivel em: `http://localhost:8080/api/produtos`  
+O painel do banco de dados H2 fica em: `http://localhost:8080/h2-console`
 
-### Opção 2: Demonstração Rápida usando só o Java puro (Sem precisar do Maven)
-Na pasta `demonstracao-rapida/` deixei um servidor HTTP nativo em Java puro com os mesmos endpoints REST para testar na hora com o Java da sua máquina:
+### Opcao 2: Teste rapido em Java puro (sem precisar de Maven)
+Dentro da pasta `demonstracao-rapida/` tem um arquivo simples que compila e roda direto com o Java instalado na sua maquina:
 ```bash
 cd demonstracao-rapida
 javac ServidorApiSemDependencias.java
 java demonstracao.ServidorApiSemDependencias
 ```
-Abra `http://localhost:8080/api/produtos` no seu navegador para ver o JSON retornando na hora!
+Depois e so abrir no navegador: `http://localhost:8080/api/produtos`
