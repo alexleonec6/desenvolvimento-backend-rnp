@@ -4,15 +4,19 @@ Anotacoes, comprovante de conclusao e um mini-projeto em Java com Spring Boot qu
 
 ---
 
-## Comprovante de Conclusao e Certificado
+## Certificado Oficial e Comprovante de Conclusao
 
-Terminei todas as etapas do curso no Moodle da RNP, com 100% de progresso, nota maxima na atividade SCORM e a pesquisa de satisfacao respondida.
+O curso foi concluido com 100% de aproveitamento e o certificado oficial ja foi emitido e assinado digitalmente pela Escola Superior de Redes (RNP):
 
-![Comprovante de Conclusao](comprovante-conclusao-rnp.png)
+![Certificado Oficial](certificado-oficial-esr-rnp.png)
 
-- Status no Moodle - 100% concluido
-- Link para pegar o certificado - https://esr.rnp.br/minha-conta/meus-certificados/
-(O sistema da RNP avisa que o certificado oficial fica disponivel no portal da ESR em ate 7 dias uteis apos a aprovacao).
+- Aluno - Alexandre Leone Souza da Cruz
+- Carga horaria - 10 horas
+- Data de emissao - 13 de novembro de 2026
+- Codigo de autenticidade - `e197ef77-26c6-49d4-8526-03960636096d`
+- Validacao oficial - https://portal-esr.rnp.br//#/documentos/buscar?id=e197ef77-26c6-49d4-8526-03960636096d
+- Arquivo oficial em PDF - [Certificado_ESR_Desenvolvimento_Backend.pdf](Certificado_ESR_Desenvolvimento_Backend.pdf)
+- Comprovante de 100% no Moodle - [comprovante-conclusao-rnp.png](comprovante-conclusao-rnp.png)
 
 ---
 
